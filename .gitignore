@@ -1,0 +1,21 @@
+# Xcode
+DerivedData/
+build/
+*.xcworkspace
+*.xcuserstate
+*.xcuserdata/
+
+# SwiftPM
+/.build/
+/Packages/
+
+# Secrets & config
+*.xcconfig
+*.plist
+!Info.plist        # allow Info.plist if you need it in the repo
+
+# Ignore all .DS_Store files (macOS junk)
+*.DS_Store
+
+# Ignore the data folder
+Data/
