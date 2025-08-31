@@ -10,6 +10,8 @@ import SwiftUI
 struct MainView: View {
     @StateObject private var langMgr = LanguageManager()
     @EnvironmentObject var purchaseManager: PurchaseManager
+    let freeExamIDs: Set<Int> = [1, 2]
+
     
     
     // 1. Ad + navigation state
@@ -50,32 +52,45 @@ struct MainView: View {
                         LazyVStack(spacing: 12) {
                             // Preset exams
                             ForEach(exams) { exam in
+                                let isLocked = !freeExamIDs.contains(exam.id) && !purchaseManager.hasRemovedAds
+                                
                                 Button {
-                                    // Prepare questions and show ad
-                                    pendingQuestions = loadQuestions(from: exam.filename)
-                                    showAd = true
+                                    if isLocked {
+                                        // Prompt user to purchase unlock
+                                        Task { await purchaseManager.purchaseRemoveAds() }
+                                    } else {
+                                        pendingQuestions = loadQuestions(from: exam.filename)
+                                        showAd = true
+                                    }
                                 } label: {
-                                    Text(localizedKey: exam.titleKey)
-                                        .frame(maxWidth: 150)
-                                        .padding()
-                                        .background(Color.orange)
-                                        .foregroundColor(.white)
-                                        .cornerRadius(500)
-                                }
-                            }
-                            
-                            // Random practice
-                            Button {
-                                pendingQuestions = randomQuestions
-                                showAd = true
-                            } label: {
-                                Text(localizedKey: "random_practice")
+                                    HStack {
+                                        Text(localizedKey: exam.titleKey)
+                                        if isLocked {
+                                            Image(systemName: "lock.fill")
+                                        }
+                                    }
                                     .frame(maxWidth: 150)
                                     .padding()
-                                    .background(Color.yellow)
+                                    .background(isLocked ? Color.gray : Color.orange)
                                     .foregroundColor(.white)
                                     .cornerRadius(500)
+                                }
+                                .disabled(isLocked)
                             }
+
+                            
+                            // Random practice
+//                            Button {
+//                                pendingQuestions = randomQuestions
+//                                showAd = true
+//                            } label: {
+//                                Text(localizedKey: "random_practice")
+//                                    .frame(maxWidth: 150)
+//                                    .padding()
+//                                    .background(Color.yellow)
+//                                    .foregroundColor(.white)
+//                                    .cornerRadius(500)
+//                            }
                         }
                         .padding(.horizontal)
                     }
@@ -88,16 +103,56 @@ struct MainView: View {
                     
                 }
                 .padding(.horizontal, 80)   // ✅ only horizontal padding
-                Button("Remove Ads") {
-                    Task {
-                        await purchaseManager.purchaseRemoveAds()
+                
+//                if !purchaseManager.hasRemovedAds {
+//                    Button("Unlock All Exams + Remove Ads") {
+//                        Task {
+//                            await purchaseManager.purchaseRemoveAds()
+//                        } 
+//                    }
+//                    Button("Unlock All Exams + Remove Ads (Debug)") {
+//                        purchaseManager.hasRemovedAds = true
+//                    }.padding()
+//                }
+//
+                if !purchaseManager.hasRemovedAds {
+                    VStack(spacing: 12) {
+                        Button {
+                            Task {
+                                await purchaseManager.purchaseRemoveAds()
+                            }
+                        } label: {
+                            HStack {
+                                Image(systemName: "lock.open.fill")
+                                Text("Unlock All Exams + Remove Ads")
+                                    .fontWeight(.semibold)
+                            }
+                            .frame(maxWidth: 350)
+                            .padding()
+                            .background(Color.yellow)
+                            .foregroundColor(.white)
+                            .cornerRadius(500)
+                        }
+
+                        Button {
+                            purchaseManager.hasRemovedAds = true
+                        } label: {
+                            HStack {
+                                Image(systemName: "hammer.fill")
+                                Text("Unlock All Exams + Remove Ads (Debug)")
+                                    .fontWeight(.semibold)
+                            }
+                            .frame(maxWidth: 350)
+                            .padding()
+                            .background(Color.gray)
+                            .foregroundColor(.white)
+                            .cornerRadius(500)
+                        }
                     }
-                }
-                Button("Remove Ads (Debug)") {
-                    purchaseManager.hasRemovedAds = true
+                    .padding()
                 }
 
-                .padding()
+                
                 
                 // 3. Hidden NavigationLink to push TestView
                 if let qs = pendingQuestions {

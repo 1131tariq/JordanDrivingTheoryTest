@@ -12,12 +12,13 @@ import GoogleMobileAds
 @main
 struct JordanDrivingTheoryTestApp: App {
     @StateObject private var purchaseManager = PurchaseManager()
+    @UIApplicationDelegateAdaptor(AppDelegate.self) var appDelegate   // ✅ here, as a property
+
     
     init() {
         MobileAds.shared.start { status in
             print("✅ Initialized with adapter statuses: \(status.adapterStatusesByClassName)")
         }
-        @UIApplicationDelegateAdaptor(AppDelegate.self) var appDelegate
     }
     
     var body: some Scene {

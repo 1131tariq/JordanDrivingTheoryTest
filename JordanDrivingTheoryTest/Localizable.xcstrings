@@ -343,12 +343,6 @@
         }
       }
     },
-    "Remove Ads" : {
-
-    },
-    "Remove Ads (Debug)" : {
-
-    },
     "score" : {
       "localizations" : {
         "ar" : {
@@ -401,6 +395,12 @@
           }
         }
       }
+    },
+    "Unlock All Exams + Remove Ads" : {
+
+    },
+    "Unlock All Exams + Remove Ads (Debug)" : {
+
     },
     "welcome_body" : {
       "extractionState" : "manual",
