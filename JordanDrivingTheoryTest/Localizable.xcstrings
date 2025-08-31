@@ -397,10 +397,38 @@
       }
     },
     "Unlock All Exams + Remove Ads" : {
-
+      "extractionState" : "stale",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "إزالة الإعلانات"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Remove Ads"
+          }
+        }
+      }
     },
     "Unlock All Exams + Remove Ads (Debug)" : {
-
+      "extractionState" : "stale",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "فتح جميع الاختبارات + إزالة الإعلانات (التصحيح)"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Unlock All Exams + Remove Ads (Debug)"
+          }
+        }
+      }
     },
     "welcome_body" : {
       "extractionState" : "manual",

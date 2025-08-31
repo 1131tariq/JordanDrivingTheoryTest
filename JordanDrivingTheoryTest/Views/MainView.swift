@@ -10,8 +10,8 @@ import SwiftUI
 struct MainView: View {
     @StateObject private var langMgr = LanguageManager()
     @EnvironmentObject var purchaseManager: PurchaseManager
-    let freeExamIDs: Set<Int> = [1, 2]
-
+    let freeExamIDs: Set<Int> = [1, 2,3,4,5,6,7,8]
+    
     
     
     // 1. Ad + navigation state
@@ -77,20 +77,6 @@ struct MainView: View {
                                 }
                                 .disabled(isLocked)
                             }
-
-                            
-                            // Random practice
-//                            Button {
-//                                pendingQuestions = randomQuestions
-//                                showAd = true
-//                            } label: {
-//                                Text(localizedKey: "random_practice")
-//                                    .frame(maxWidth: 150)
-//                                    .padding()
-//                                    .background(Color.yellow)
-//                                    .foregroundColor(.white)
-//                                    .cornerRadius(500)
-//                            }
                         }
                         .padding(.horizontal)
                     }
@@ -104,17 +90,6 @@ struct MainView: View {
                 }
                 .padding(.horizontal, 80)   // ✅ only horizontal padding
                 
-//                if !purchaseManager.hasRemovedAds {
-//                    Button("Unlock All Exams + Remove Ads") {
-//                        Task {
-//                            await purchaseManager.purchaseRemoveAds()
-//                        } 
-//                    }
-//                    Button("Unlock All Exams + Remove Ads (Debug)") {
-//                        purchaseManager.hasRemovedAds = true
-//                    }.padding()
-//                }
-//
                 if !purchaseManager.hasRemovedAds {
                     VStack(spacing: 12) {
                         Button {
@@ -124,7 +99,7 @@ struct MainView: View {
                         } label: {
                             HStack {
                                 Image(systemName: "lock.open.fill")
-                                Text("Unlock All Exams + Remove Ads")
+                                Text(localizedKey: "Unlock All Exams + Remove Ads")
                                     .fontWeight(.semibold)
                             }
                             .frame(maxWidth: 350)
@@ -133,25 +108,10 @@ struct MainView: View {
                             .foregroundColor(.white)
                             .cornerRadius(500)
                         }
-
-                        Button {
-                            purchaseManager.hasRemovedAds = true
-                        } label: {
-                            HStack {
-                                Image(systemName: "hammer.fill")
-                                Text("Unlock All Exams + Remove Ads (Debug)")
-                                    .fontWeight(.semibold)
-                            }
-                            .frame(maxWidth: 350)
-                            .padding()
-                            .background(Color.gray)
-                            .foregroundColor(.white)
-                            .cornerRadius(500)
-                        }
                     }
                     .padding()
                 }
-
+                
                 
                 
                 // 3. Hidden NavigationLink to push TestView
@@ -182,15 +142,15 @@ struct MainView: View {
                 }
             }) {
                 if purchaseManager.hasRemovedAds {
-                        // Skip the ad entirely → go straight to test
-                        Color.clear.onAppear {
-                            // instantly dismiss the ad cover
-                            showAd = false
-                            navigateToTest = true
-                        }
-                    } else {
-                        InterstitialAdView()
+                    // Skip the ad entirely → go straight to test
+                    Color.clear.onAppear {
+                        // instantly dismiss the ad cover
+                        showAd = false
+                        navigateToTest = true
                     }
+                } else {
+                    InterstitialAdView()
+                }
             }
             .onAppear {
                 LocalizedBundle.setLanguage(langMgr.language)
