@@ -11,6 +11,8 @@ import GoogleMobileAds
 
 @main
 struct JordanDrivingTheoryTestApp: App {
+    @StateObject private var purchaseManager = PurchaseManager()
+    
     init() {
         MobileAds.shared.start { status in
             print("✅ Initialized with adapter statuses: \(status.adapterStatusesByClassName)")
@@ -20,7 +22,7 @@ struct JordanDrivingTheoryTestApp: App {
     
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            ContentView().environmentObject(purchaseManager)
         }
     }
 }

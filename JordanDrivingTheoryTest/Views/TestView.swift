@@ -10,6 +10,8 @@ struct TestView: View {
     // MARK: – Injected
     let questions: [Question]
     let goToResult: (_ score: Int, _ total: Int) -> Void
+    @EnvironmentObject var purchaseManager: PurchaseManager
+
     
     // MARK: – Environment & State
     @Environment(\.dismiss) private var dismiss
@@ -131,10 +133,11 @@ struct TestView: View {
                 
                 Spacer()
                 
-                // Placeholder banner ad at the bottom
-    //            BannerAdView()
-                BannerAdView(adUnitID: Secrets.bannerUnitID)
-                                .frame(height: 50) // Height adjusts automatically based on device width
+                if !purchaseManager.hasRemovedAds {
+                    BannerAdView(adUnitID: Secrets.bannerUnitID)
+                        .frame(height: 50) // Height adjusts automatically based on device width
+                }
+            
             }
             .padding()
             .navigationBarBackButtonHidden(true)
@@ -146,7 +149,15 @@ struct TestView: View {
                 // After the interstitial is dismissed, go back to the main menu
                 dismiss()
             }) {
-                InterstitialAdView()
+                if purchaseManager.hasRemovedAds {
+                        // Skip the ad → instantly dismiss and go back
+                        Color.clear.onAppear {
+                            showAd = false
+                            dismiss()
+                        }
+                    } else {
+                        InterstitialAdView()
+                    }
             }.padding(80)
         }
     }

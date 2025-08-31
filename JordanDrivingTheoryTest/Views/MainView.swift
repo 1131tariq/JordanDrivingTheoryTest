@@ -9,6 +9,8 @@ import SwiftUI
 
 struct MainView: View {
     @StateObject private var langMgr = LanguageManager()
+    @EnvironmentObject var purchaseManager: PurchaseManager
+    
     
     // 1. Ad + navigation state
     @State private var showAd = false
@@ -38,7 +40,7 @@ struct MainView: View {
                     }
                     .pickerStyle(.segmented)
                     .frame(maxWidth: 220) // keeps picker smaller
-                            Spacer()
+                    Spacer()
                     
                     Text(localizedKey: "main_action_title")
                         .font(.largeTitle)
@@ -79,12 +81,24 @@ struct MainView: View {
                     }
                     
                     Spacer(minLength: 10)
-//                    BannerAdView()
-                    BannerAdView(adUnitID: Secrets.bannerUnitID)
-                                    .frame(height: 50) // Height adjusts automatically based on device width
+                    if !purchaseManager.hasRemovedAds {
+                        BannerAdView(adUnitID: Secrets.bannerUnitID)
+                            .frame(height: 50) // Height adjusts automatically based on device width
+                    }
+                    
                 }
                 .padding(.horizontal, 80)   // ✅ only horizontal padding
+                Button("Remove Ads") {
+                    Task {
+                        await purchaseManager.purchaseRemoveAds()
+                    }
+                }
+                Button("Remove Ads (Debug)") {
+                    purchaseManager.hasRemovedAds = true
+                }
 
+                .padding()
+                
                 // 3. Hidden NavigationLink to push TestView
                 if let qs = pendingQuestions {
                     NavigationLink(
@@ -104,6 +118,7 @@ struct MainView: View {
                 }
             }
             
+            
             // 4. Interstitial fullScreenCover
             .fullScreenCover(isPresented: $showAd, onDismiss: {
                 // Navigate to test after ad is dismissed
@@ -111,7 +126,16 @@ struct MainView: View {
                     navigateToTest = true
                 }
             }) {
-                InterstitialAdView()
+                if purchaseManager.hasRemovedAds {
+                        // Skip the ad entirely → go straight to test
+                        Color.clear.onAppear {
+                            // instantly dismiss the ad cover
+                            showAd = false
+                            navigateToTest = true
+                        }
+                    } else {
+                        InterstitialAdView()
+                    }
             }
             .onAppear {
                 LocalizedBundle.setLanguage(langMgr.language)

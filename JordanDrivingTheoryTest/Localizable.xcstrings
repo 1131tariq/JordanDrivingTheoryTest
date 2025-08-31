@@ -343,6 +343,12 @@
         }
       }
     },
+    "Remove Ads" : {
+
+    },
+    "Remove Ads (Debug)" : {
+
+    },
     "score" : {
       "localizations" : {
         "ar" : {
@@ -375,6 +381,9 @@
           }
         }
       }
+    },
+    "The Hub Studios®" : {
+
     },
     "try_again" : {
       "extractionState" : "stale",
