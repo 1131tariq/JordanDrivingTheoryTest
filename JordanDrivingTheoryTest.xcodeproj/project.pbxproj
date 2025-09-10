@@ -8,12 +8,14 @@
 
 /* Begin PBXBuildFile section */
 		8B82A45D2E59EF3D00D43A68 /* GoogleMobileAds in Frameworks */ = {isa = PBXBuildFile; productRef = 8B82A45C2E59EF3D00D43A68 /* GoogleMobileAds */; };
+		8BCECBAF2E6EBA28008333B6 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8BCECBAE2E6EBA28008333B6 /* StoreKit.framework */; };
 		8BE14E9E2E5B4CBC001E4C68 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 8BE14E9D2E5B4CB4001E4C68 /* .gitignore */; };
 		8BE14EA62E5B4F3B001E4C68 /* Secrets.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8BE14EA52E5B4F3B001E4C68 /* Secrets.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		8B82A3E12E59EC2700D43A68 /* JordanDrivingTheoryTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JordanDrivingTheoryTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		8BCECBAE2E6EBA28008333B6 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		8BE14E9D2E5B4CB4001E4C68 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		8BE14EA52E5B4F3B001E4C68 /* Secrets.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Secrets.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -45,6 +47,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8B82A45D2E59EF3D00D43A68 /* GoogleMobileAds in Frameworks */,
+				8BCECBAF2E6EBA28008333B6 /* StoreKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -57,6 +60,7 @@
 				8BE14EA52E5B4F3B001E4C68 /* Secrets.plist */,
 				8BE14E9D2E5B4CB4001E4C68 /* .gitignore */,
 				8B82A3E32E59EC2700D43A68 /* JordanDrivingTheoryTest */,
+				8BCECBAD2E6EBA28008333B6 /* Frameworks */,
 				8B82A3E22E59EC2700D43A68 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -67,6 +71,14 @@
 				8B82A3E12E59EC2700D43A68 /* JordanDrivingTheoryTest.app */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		8BCECBAD2E6EBA28008333B6 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				8BCECBAE2E6EBA28008333B6 /* StoreKit.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -189,7 +201,7 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
-				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
 				ENABLE_USER_SCRIPT_SANDBOXING = YES;

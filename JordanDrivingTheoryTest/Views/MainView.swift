@@ -12,8 +12,6 @@ struct MainView: View {
     @EnvironmentObject var purchaseManager: PurchaseManager
     let freeExamIDs: Set<Int> = [1, 2,3,4,5,6,7,8]
     
-    
-    
     // 1. Ad + navigation state
     @State private var showAd = false
     @State private var pendingQuestions: [Question]? = nil
@@ -64,7 +62,7 @@ struct MainView: View {
                                     }
                                 } label: {
                                     HStack {
-                                        Text(localizedKey: exam.titleKey)
+                                        Text("\(NSLocalizedString("Exam", comment: "")) \(exam.id)")
                                         if isLocked {
                                             Image(systemName: "lock.fill")
                                         }

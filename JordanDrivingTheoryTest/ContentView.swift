@@ -47,34 +47,41 @@ struct ContentView: View {
     // 🔑 New state for splash screen
     @State private var showSplash = true
     
+    // 🔑 Network monitor
+    @EnvironmentObject var networkMonitor: NetworkMonitor
+
     var body: some View {
-        ZStack {
-            if showSplash {
-                SplashScreenView()
-            } else {
-                NavigationStack {
-                    if hasSeenOnboarding {
-                        MainView()
-                    } else {
-                        OnboardingView {
-                            hasSeenOnboarding = true
-                        }
-                    }
-                }
-                .onAppear {
-                    LocalizedBundle.setLanguage(language)
-                }
-            }
-        }
-        .onAppear {
-            // Hide splash after 3 seconds
-            DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
-                withAnimation {
-                    showSplash = false
-                }
-            }
-        }
-    }
+           ZStack {
+               if showSplash {
+                   SplashScreenView()
+               } else {
+                   if networkMonitor.isConnected {
+                       NavigationStack {
+                           if hasSeenOnboarding {
+                               MainView()
+                           } else {
+                               OnboardingView {
+                                   hasSeenOnboarding = true
+                               }
+                           }
+                       }
+                       .onAppear {
+                           LocalizedBundle.setLanguage(language)
+                       }
+                   } else {
+                       NoConnectionView()
+                   }
+               }
+           }
+           .onAppear {
+               // Hide splash after 2 seconds
+               DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+                   withAnimation {
+                       showSplash = false
+                   }
+               }
+           }
+       }
 }
 
 #Preview {

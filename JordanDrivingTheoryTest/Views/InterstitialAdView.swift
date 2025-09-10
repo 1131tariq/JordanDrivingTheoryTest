@@ -12,6 +12,7 @@ import GoogleMobileAds
 struct InterstitialAdView: View {
     @Environment(\.dismiss) var dismiss
     @StateObject private var adVM = InterstitialViewModel()
+    @EnvironmentObject var purchaseManager: PurchaseManager
     @State private var hasPresented = false
     var onDismiss: (() -> Void)? = nil  // <-- Add this
 

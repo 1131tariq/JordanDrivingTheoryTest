@@ -1,6 +1,16 @@
 {
   "sourceLanguage" : "en",
   "strings" : {
+    "%@ %lld" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "%1$@ %2$lld"
+          }
+        }
+      }
+    },
     "%@: %lld" : {
       "localizations" : {
         "ar" : {
@@ -127,6 +137,16 @@
         }
       }
     },
+    "Exam" : {
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "امتحان"
+          }
+        }
+      }
+    },
     "get_reminders" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -239,6 +259,28 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Next"
+          }
+        }
+      }
+    },
+    "No Wi-Fi Connection" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "لا يوجد اتصال بالإنترنت"
+          }
+        }
+      }
+    },
+    "Please connect to Wi-Fi to use this app." : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "يرجى الاتصال بالإنترنت لاستخدام هذا التطبيق.\n"
           }
         }
       }

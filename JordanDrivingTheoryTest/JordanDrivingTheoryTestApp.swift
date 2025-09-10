@@ -13,6 +13,9 @@ import GoogleMobileAds
 struct JordanDrivingTheoryTestApp: App {
     @StateObject private var purchaseManager = PurchaseManager()
     @UIApplicationDelegateAdaptor(AppDelegate.self) var appDelegate   // ✅ here, as a property
+    @StateObject private var networkMonitor = NetworkMonitor()
+
+    
 
     
     init() {
@@ -23,7 +26,10 @@ struct JordanDrivingTheoryTestApp: App {
     
     var body: some Scene {
         WindowGroup {
-            ContentView().environmentObject(purchaseManager)
+            ContentView()
+                .environmentObject(purchaseManager)
+                .environmentObject(networkMonitor)
+
         }
     }
 }
