@@ -10,7 +10,7 @@ import Foundation
 import StoreKit
 
 enum IAPProducts {
-    static let removeAds = "com.yourapp.removeads"
+    static let removeAds = "BataynehInc.JordanDrivingTheoryTest.removeads"
 }
 
 @MainActor
@@ -27,6 +27,7 @@ class PurchaseManager: ObservableObject {
     
     func purchaseRemoveAds() async {
         do {
+            print("started")
             if let product = try await Product.products(for: [IAPProducts.removeAds]).first {
                 let result = try await product.purchase()
                 switch result {
@@ -40,6 +41,7 @@ class PurchaseManager: ObservableObject {
         } catch {
             print("Purchase failed: \(error)")
         }
+
     }
     
     func updatePurchasedProducts() async {
