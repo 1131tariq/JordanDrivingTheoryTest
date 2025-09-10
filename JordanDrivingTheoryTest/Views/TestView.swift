@@ -99,6 +99,7 @@ struct TestView: View {
                     Text(viewModel.currentQuestion.text(for: language))
                         .font(.title2)
                         .multilineTextAlignment(.center)
+                        .frame(maxWidth: 260)
                     
                     ForEach(viewModel.currentQuestion.options(for: language).indices, id: \.self) { idx in
                         Button {
