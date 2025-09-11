@@ -14,19 +14,26 @@ struct InterstitialAdView: View {
     @StateObject private var adVM = InterstitialViewModel()
     @EnvironmentObject var purchaseManager: PurchaseManager
     @State private var hasPresented = false
-    var onDismiss: (() -> Void)? = nil  // <-- Add this
-
+    var onDismiss: (() -> Void)? = nil
 
     var body: some View {
-        // Empty view since we don't need a loading placeholder
         Color.clear
             .task {
                 await adVM.loadAd()
-                adVM.onAdDismiss = { dismiss() }
+                adVM.onAdDismiss = {
+                    dismiss()
+                    onDismiss?()
+                }
 
-                if !hasPresented, adVM.interstitialAd != nil {
+                if !hasPresented {
                     hasPresented = true
-                    adVM.showAd()
+                    if adVM.interstitialAd != nil {
+                        adVM.showAd()
+                    } else {
+                        // ⚠️ No ad available → dismiss immediately
+                        dismiss()
+                        onDismiss?()
+                    }
                 }
             }
     }
