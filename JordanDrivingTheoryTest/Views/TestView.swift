@@ -81,15 +81,17 @@ struct TestView: View {
                     if let imgName = viewModel.currentQuestion.imageName {
                         Image(imgName)
                             .resizable()
-                            .scaledToFit()
-                            .frame(maxHeight: 200)
+                                     .scaledToFit()
+                                     .frame(maxWidth: 300, maxHeight: 200) // adjust size here
+                                     .padding()
                     } else if let urlString = viewModel.currentQuestion.imageURL,
                               let url = URL(string: urlString) {
                         AsyncImage(url: url) { image in
                             image
                                 .resizable()
-                                .scaledToFit()
-                                .frame(maxHeight: 200)
+                                         .scaledToFit()
+                                         .frame(maxWidth: 300, maxHeight: 300) // adjust size here
+                                         .padding()
                         } placeholder: {
                             ProgressView()
                         }
@@ -97,10 +99,9 @@ struct TestView: View {
 
                     
                     Text(viewModel.currentQuestion.text(for: language))
-                        .font(.title2)
                         .multilineTextAlignment(.center)
-                        .frame(maxWidth: 260)
-                    
+                        .lineLimit(nil)
+                        .fixedSize(horizontal: false, vertical: true)
                     ForEach(viewModel.currentQuestion.options(for: language).indices, id: \.self) { idx in
                         Button {
                             if viewModel.selectedAnswer == nil {

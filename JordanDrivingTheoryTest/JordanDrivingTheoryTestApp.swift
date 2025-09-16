@@ -22,6 +22,9 @@ struct JordanDrivingTheoryTestApp: App {
         MobileAds.shared.start { status in
             print("✅ Initialized with adapter statuses: \(status.adapterStatusesByClassName)")
         }
+        MobileAds.shared.requestConfiguration.testDeviceIdentifiers = [
+                    "a3bb6548935848c963aec29062ee5fc3"
+                ]
     }
     
     var body: some Scene {
