@@ -43,6 +43,22 @@
         }
       }
     },
+    "Ads Removed ✅" : {
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "تمت إزالة الإعلانات ✅"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ads Removed ✅"
+          }
+        }
+      }
+    },
     "allow_notifications" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -176,15 +192,7 @@
       }
     },
     "Key 1" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "ar" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "مفتاح"
-          }
-        }
-      }
+      "extractionState" : "manual"
     },
     "Language" : {
       "localizations" : {
@@ -202,7 +210,7 @@
         "ar" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "لنبدأ"
+            "value" : "طالعة يا كبير"
           }
         },
         "en" : {
@@ -219,7 +227,7 @@
         "ar" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "اختر الامتحان"
+            "value" : "نقي إمتحان"
           }
         },
         "en" : {
@@ -269,7 +277,13 @@
         "ar" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "لا يوجد اتصال بالإنترنت"
+            "value" : "فش عندك نت يا كبير"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "No Wi-Fi Connection"
           }
         }
       }
@@ -280,7 +294,13 @@
         "ar" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "يرجى الاتصال بالإنترنت لاستخدام هذا التطبيق.\n"
+            "value" : "اشبك نت عشان تعرف تكمل المشوار"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Please connect to Wi-Fi to use this app."
           }
         }
       }
@@ -308,7 +328,7 @@
         "ar" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "ابدأ بالتدريب وبالتوفيق في الاختبا"
+            "value" : "كل اشي جاهز ركب أول واطلع"
           }
         },
         "en" : {
@@ -325,7 +345,7 @@
         "ar" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "كل شيء جاهز!"
+            "value" : "روح يا كبير"
           }
         },
         "en" : {
@@ -342,7 +362,7 @@
         "ar" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "هل ترغب في تلقي تذكيرات للتدرب"
+            "value" : "بدك يوصلك اشعارات عشان تتذكر تدرب"
           }
         },
         "en" : {
@@ -357,8 +377,8 @@
       "localizations" : {
         "ar" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "تدرب على اختبار نظرية القيادة الخاص بك!"
+            "state" : "translated",
+            "value" : "مش غلط تفوت تدربلك على إمتحان النظري شوي "
           }
         },
         "en" : {
@@ -374,7 +394,7 @@
         "ar" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "اختبار القيادة JO"
+            "value" : "فحص النظري للسوق الاردن"
           }
         },
         "en" : {
@@ -385,12 +405,34 @@
         }
       }
     },
+    "Remove Ads" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "إزالة الإعلانات"
+          }
+        }
+      }
+    },
+    "Restore Purchases" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "استعادة المشتريات"
+          }
+        }
+      }
+    },
     "score" : {
       "localizations" : {
         "ar" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "النتيجة"
+            "state" : "translated",
+            "value" : "علامتك"
           }
         },
         "en" : {
@@ -427,7 +469,7 @@
         "ar" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "حاول ثانية"
+            "value" : "لف وإرجع"
           }
         },
         "en" : {
@@ -511,7 +553,7 @@
         "ar" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "❌ خطأ"
+            "value" : "❌ غلط"
           }
         },
         "en" : {
@@ -527,7 +569,7 @@
         "ar" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "لقد سجلت"
+            "value" : "علامتك"
           }
         },
         "en" : {
@@ -544,7 +586,7 @@
         "ar" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "درجاتك كانت"
+            "value" : "علامتك"
           }
         },
         "en" : {

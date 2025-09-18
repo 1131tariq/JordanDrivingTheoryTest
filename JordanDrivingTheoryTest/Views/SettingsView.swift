@@ -8,10 +8,55 @@
 import SwiftUI
 
 struct SettingsView: View {
+    @EnvironmentObject var purchaseManager: PurchaseManager
+
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
-    }
+        ZStack {
+            Image("backdrop2").resizable().scaledToFill().ignoresSafeArea().opacity(0.7)
+            VStack(spacing: 20) {
+                
+                if !purchaseManager.hasRemovedAds {
+                    Button {
+                        Task {
+                            await purchaseManager.purchaseRemoveAds()
+                        }
+                    } label: {
+                        HStack {
+                            Text(localizedKey: "Remove Ads")
+                                .fontWeight(.semibold)
+                        }
+                        .frame(maxWidth: 350)
+                        .padding()
+                        .background(Color.orange)
+                        .foregroundColor(.white)
+                        .cornerRadius(500)
+                    }
+                } else {
+                    Text("Ads Removed ✅")
+                }
+                Button {
+                    Task {
+                        await purchaseManager.restorePurchases()
+                    }
+                } label: {
+                    HStack {
+                        Text(localizedKey: "Restore Purchases")
+                            .fontWeight(.semibold)
+                    }
+                    .frame(maxWidth: 350)
+                    .padding()
+                    .background(Color.yellow)
+                    .foregroundColor(.white)
+                    .cornerRadius(500)
+                }
+                .padding()
+                .foregroundColor(.blue)
+            }
+            .padding()
+        }
+        }
 }
+
 
 #Preview {
     SettingsView()

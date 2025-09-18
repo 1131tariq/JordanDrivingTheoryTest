@@ -14,7 +14,7 @@ class PurchaseManager: ObservableObject {
     @Published var hasRemovedAds = false
     @Published var products: [Product] = []
 
-    private let removeAdsID = "BataynehInc.JordanDrivingTheoryTestApp.removeads"
+    private let removeAdsID = "BataynehInc.JordanDrivingTheoryTestApp.removeads1"
 
     init() {
         Task {
@@ -103,7 +103,14 @@ class PurchaseManager: ObservableObject {
 
     // Manual restore purchases button
     func restorePurchases() async {
-        await updatePurchasedProducts()
+        do {
+            try await AppStore.sync()   // Forces sync with App Store
+            await updatePurchasedProducts()
+            print("✅ Purchases restored")
+        } catch {
+            print("❌ Failed to restore purchases: \(error)")
+        }
     }
+
 }
 

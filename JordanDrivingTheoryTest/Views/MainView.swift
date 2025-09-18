@@ -34,12 +34,20 @@ struct MainView: View {
                 
                 VStack() {
                     // Language picker
-                    Picker("Language", selection: $langMgr.language) {
-                        Text("English").tag("en")
-                        Text("العربية").tag("ar")
+                    HStack {
+                        Picker("Language", selection: $langMgr.language) {
+                            Text("English").tag("en")
+                            Text("العربية").tag("ar")
+                        }
+                        .pickerStyle(.segmented)
+                        .frame(maxWidth: 220) // keeps picker smaller
+                        NavigationLink(destination: SettingsView()) {
+                                Image(systemName: "gearshape.fill")
+                                    .font(.title2)
+                                    .foregroundColor(.primary)
+                                    .padding(.leading, 8)
+                            }
                     }
-                    .pickerStyle(.segmented)
-                    .frame(maxWidth: 220) // keeps picker smaller
                     Spacer()
                     
                     Text(localizedKey: "main_action_title")
@@ -87,30 +95,6 @@ struct MainView: View {
                     
                 }
                 .padding(.horizontal, 80)   // ✅ only horizontal padding
-                
-                if !purchaseManager.hasRemovedAds {
-                    VStack(spacing: 12) {
-                        Button {
-                            Task {
-                                await purchaseManager.purchaseRemoveAds()
-                            }
-                        } label: {
-                            HStack {
-                                Image(systemName: "lock.open.fill")
-                                Text(localizedKey: "Unlock All Exams + Remove Ads")
-                                    .fontWeight(.semibold)
-                            }
-                            .frame(maxWidth: 350)
-                            .padding()
-                            .background(Color.yellow)
-                            .foregroundColor(.white)
-                            .cornerRadius(500)
-                        }
-                    }
-                    .padding()
-                }
-                
-                
                 
                 // 3. Hidden NavigationLink to push TestView
                 if let qs = pendingQuestions {
