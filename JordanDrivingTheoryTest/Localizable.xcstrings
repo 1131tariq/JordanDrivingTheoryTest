@@ -81,7 +81,7 @@
       "localizations" : {
         "ar" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "العربية"
           }
         },
@@ -132,7 +132,7 @@
         "ar" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "english"
+            "value" : "الإنجليزية"
           }
         },
         "en" : {
@@ -148,7 +148,7 @@
         "ar" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "english"
+            "value" : "الإنجليزية"
           }
         }
       }
@@ -180,20 +180,6 @@
         }
       }
     },
-    "Key" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "ar" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "مفتاح"
-          }
-        }
-      }
-    },
-    "Key 1" : {
-      "extractionState" : "manual"
-    },
     "Language" : {
       "localizations" : {
         "ar" : {
@@ -210,7 +196,7 @@
         "ar" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "طالعة يا كبير"
+            "value" : "لنبدأ"
           }
         },
         "en" : {
@@ -227,7 +213,7 @@
         "ar" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "نقي إمتحان"
+            "value" : "اختر امتحاناً"
           }
         },
         "en" : {
@@ -243,7 +229,7 @@
         "ar" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "القائمة الرئسية"
+            "value" : "القائمة الرئيسية"
           }
         },
         "en" : {
@@ -277,7 +263,7 @@
         "ar" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "فش عندك نت يا كبير"
+            "value" : "لا يوجد اتصال بالإنترنت"
           }
         },
         "en" : {
@@ -294,7 +280,7 @@
         "ar" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "اشبك نت عشان تعرف تكمل المشوار"
+            "value" : "يرجى الاتصال بالإنترنت لاستخدام هذا التطبيق."
           }
         },
         "en" : {
@@ -328,7 +314,7 @@
         "ar" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "كل اشي جاهز ركب أول واطلع"
+            "value" : "ابدأ التدريب ونتمنى لك التوفيق في الامتحان."
           }
         },
         "en" : {
@@ -345,7 +331,7 @@
         "ar" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "روح يا كبير"
+            "value" : "كل شيء جاهز!"
           }
         },
         "en" : {
@@ -362,7 +348,7 @@
         "ar" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "بدك يوصلك اشعارات عشان تتذكر تدرب"
+            "value" : "هل ترغب في تلقي تذكيرات للتدرب؟"
           }
         },
         "en" : {
@@ -378,7 +364,7 @@
         "ar" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "مش غلط تفوت تدربلك على إمتحان النظري شوي "
+            "value" : "تدرّب على اختبار القيادة النظري الخاص بك!"
           }
         },
         "en" : {
@@ -394,7 +380,7 @@
         "ar" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "فحص النظري للسوق الاردن"
+            "value" : "اختبار القيادة الأردني"
           }
         },
         "en" : {
@@ -432,7 +418,7 @@
         "ar" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "علامتك"
+            "value" : "النتيجة"
           }
         },
         "en" : {
@@ -469,7 +455,7 @@
         "ar" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "لف وإرجع"
+            "value" : "حاول مرة أخرى"
           }
         },
         "en" : {
@@ -485,14 +471,14 @@
       "localizations" : {
         "ar" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "إزالة الإعلانات"
+            "state" : "translated",
+            "value" : "فتح جميع الامتحانات + إزالة الإعلانات"
           }
         },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Remove Ads"
+            "value" : "Unlock All Exams + Remove Ads"
           }
         }
       }
@@ -503,7 +489,7 @@
         "ar" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "فتح جميع الاختبارات + إزالة الإعلانات (التصحيح)"
+            "value" : "فتح جميع الامتحانات + إزالة الإعلانات (للتصحيح)"
           }
         },
         "en" : {
@@ -520,7 +506,7 @@
         "ar" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "تدرب على اختبار القيادة النظري الأردني باللغة العربية والإنجليزية باستخدام أسئلة حقيقية"
+            "value" : "تدرّب على اختبار القيادة النظري الأردني باللغتين العربية والإنجليزية باستخدام أسئلة حقيقية."
           }
         },
         "en" : {
@@ -537,7 +523,7 @@
         "ar" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "أهلاً بك!"
+            "value" : "مرحباً بك!"
           }
         },
         "en" : {
@@ -553,7 +539,7 @@
         "ar" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "❌ غلط"
+            "value" : "❌ خطأ"
           }
         },
         "en" : {
@@ -569,7 +555,7 @@
         "ar" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "علامتك"
+            "value" : "لقد حصلت على"
           }
         },
         "en" : {
@@ -586,7 +572,7 @@
         "ar" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "علامتك"
+            "value" : "كانت نتيجتك"
           }
         },
         "en" : {

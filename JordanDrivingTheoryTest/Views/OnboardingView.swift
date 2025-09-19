@@ -50,7 +50,7 @@ struct OnboardingView: View {
         VStack {
             VStack(spacing: 20) {
                 Text(localizedKey: "choose_language")
-                    .font(.largeTitle).foregroundColor(Color.white).bold()
+                    .font(.largeTitle).bold()
                     
                 
                 HStack(spacing: 30) {

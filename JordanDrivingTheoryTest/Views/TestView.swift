@@ -37,7 +37,7 @@ struct TestView: View {
         ZStack {
             Image("backdrop2").resizable()
                 .scaledToFill()
-                .ignoresSafeArea().opacity(0.4)
+                .ignoresSafeArea().opacity(0.3)
             VStack(spacing: 20) {
                 // Custom “Main Menu” back button
                 HStack {
@@ -73,10 +73,10 @@ struct TestView: View {
                     // … your existing quiz UI …
                     
                     Text("\(viewModel.currentIndex + 1) / \(viewModel.questions.count)")
-                        .font(.subheadline)
-                        .foregroundColor(.secondary)
+                        .font(.title)
+                        .bold()
                     
-                    ProgressView(value: viewModel.progress).tint(.yellow)
+                    ProgressView(value: viewModel.progress).tint(.yellow).padding(.horizontal)
                     
                     if let imgName = viewModel.currentQuestion.imageName {
                         Image(imgName)
@@ -101,7 +101,8 @@ struct TestView: View {
                     Text(viewModel.currentQuestion.text(for: language))
                         .multilineTextAlignment(.center)
                         .lineLimit(nil)
-                        .fixedSize(horizontal: false, vertical: true)
+                        .padding(.horizontal)
+                        .font(.title)
                     ForEach(viewModel.currentQuestion.options(for: language).indices, id: \.self) { idx in
                         Button {
                             if viewModel.selectedAnswer == nil {
@@ -114,27 +115,36 @@ struct TestView: View {
                                 .background(buttonColor(for: idx))
                                 .foregroundColor(.white)
                                 .cornerRadius(8)
+                                .multilineTextAlignment(.center)
+                                .lineLimit(nil)
                         }
                     }
+                    
+                    Spacer()
                     
                     if viewModel.showFeedback {
                         Text(viewModel.selectedAnswer == viewModel.currentQuestion.correctIndex
                              ? NSLocalizedString("correct", bundle: .localized, comment: "")
                              : NSLocalizedString("wrong", bundle: .localized, comment: ""))
-                        Button(NSLocalizedString("next", bundle: .localized, comment: "")) {
-                            if viewModel.currentIndex == viewModel.questions.count - 1 {
-                                withAnimation { isFinished = true }
-                            } else {
-                                viewModel.nextQuestion()
+                        Button {
+                                if viewModel.currentIndex == viewModel.questions.count - 1 {
+                                    withAnimation { isFinished = true }
+                                } else {
+                                    viewModel.nextQuestion()
+                                }
+                            } label: {
+                                Text(NSLocalizedString("next", bundle: .localized, comment: ""))
+                                    .padding()
+                                    .frame(maxWidth: 260)
+                                    .background(Color.blue) // same style as choices
+                                    .foregroundColor(.white)
+                                    .cornerRadius(8)
                             }
-                        }
                     }
                     
-                    Text("\(NSLocalizedString("score", bundle: .localized, comment: "")): \(viewModel.score)")
+                    Text("\(NSLocalizedString("score", bundle: .localized, comment: "")): \(viewModel.score)").bold().font(.title)
                 }
-                
-                Spacer()
-                
+                                
                 if !purchaseManager.hasRemovedAds {
                     BannerAdView(adUnitID: Secrets.bannerUnitID)
                         .frame(height: 50) // Height adjusts automatically based on device width
@@ -160,7 +170,10 @@ struct TestView: View {
                     } else {
                         InterstitialAdView()
                     }
-            }.padding(80)
+            }
+            .padding(.horizontal, 85)// ✅ only horizontal padding
+            .padding(.vertical, 35)
+
         }
     }
     
