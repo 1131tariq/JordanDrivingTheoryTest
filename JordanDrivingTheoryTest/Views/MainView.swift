@@ -55,37 +55,45 @@ struct MainView: View {
                         .padding(.bottom, 10)
                     
                     ScrollView {
-                        LazyVStack(spacing: 12) {
-                            // Preset exams
+                        let columns = [
+                            GridItem(.flexible(), spacing: 16),
+                            GridItem(.flexible(), spacing: 16)
+                        ]
+                        
+                        LazyVGrid(columns: columns, spacing: 16) {
                             ForEach(exams) { exam in
                                 let isLocked = !freeExamIDs.contains(exam.id) && !purchaseManager.hasRemovedAds
                                 
                                 Button {
                                     if isLocked {
-                                        // Prompt user to purchase unlock
                                         Task { await purchaseManager.purchaseRemoveAds() }
                                     } else {
                                         pendingQuestions = loadQuestions(from: exam.filename)
                                         showAd = true
                                     }
                                 } label: {
-                                    HStack {
+                                    VStack {
                                         Text("\(NSLocalizedString("Exam", comment: "")) \(exam.id)")
+                                            .font(.title3)
+                                            .bold()
+                                        
                                         if isLocked {
                                             Image(systemName: "lock.fill")
+                                                .font(.headline)
                                         }
                                     }
-                                    .frame(maxWidth: 150)
-                                    .padding()
+                                    .frame(maxWidth: .infinity, minHeight: 120) // makes them square-like
                                     .background(isLocked ? Color.gray : Color.orange)
                                     .foregroundColor(.white)
-                                    .cornerRadius(500)
+                                    .cornerRadius(12)
+                                    .opacity(0.9)
                                 }
                                 .disabled(isLocked)
                             }
                         }
-                        .padding(.horizontal)
+                        .padding(.horizontal, 20)
                     }
+
                     
                     Spacer(minLength: 10)
                     if !purchaseManager.hasRemovedAds {
