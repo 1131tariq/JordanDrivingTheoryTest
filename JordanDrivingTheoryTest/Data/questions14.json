@@ -1,0 +1,452 @@
+[
+  {
+    "text_ar": "ان الریاح التي تؤثر على المركبة اثناء عملیة التجاوز كما ھو مبین بالرسم",
+    "text_en": "",
+    "options_ar": [
+      "ریاح طبیعیة",
+      "ریاح التفریغ",
+      "لاشئ مما ذكر"
+    ],
+    "options_en": [],
+    "imageURL": "https://www.arabquest.net/wp-content/uploads/2019/10/Untitled198.png",
+    "correctIndex": 0
+  },
+  {
+    "text_ar": "ان سائق المركبة الحمراء یزعج بضوئه سائق المركبة الموجودة في الأمام (الزرقاء) و ذلك لأنه لا یسیر ملاصقا له",
+    "text_en": "",
+    "options_ar": [
+      "نعم",
+      "لا"
+    ],
+    "options_en": [],
+    "imageURL": "https://www.arabquest.net/wp-content/uploads/2019/10/Untitled200.png",
+    "correctIndex": 0
+  },
+  {
+    "text_ar": "في الصورة التي امامك يريد السائق التوجه:",
+    "text_en": "",
+    "options_ar": [
+      "الى اليمين",
+      "الى اليسار",
+      "تخفيف السرعة"
+    ],
+    "options_en": [],
+    "imageURL": "https://www.arabquest.net/wp-content/uploads/2019/10/Untitled188.png",
+    "correctIndex": 0
+  },
+  {
+    "text_ar": "في الصورة التي امامك وقوف المركبة رقم ( ١ ) صحیح:",
+    "text_en": "",
+    "options_ar": [
+      "نعم",
+      "لا"
+    ],
+    "options_en": [],
+    "imageURL": "https://www.arabquest.net/wp-content/uploads/2019/10/Untitled185.png",
+    "correctIndex": 0
+  },
+  {
+    "text_ar": "في الصورة التي امامك ھل تتجاوز المركبة الزرقاء بشكل صحیح:",
+    "text_en": "",
+    "options_ar": [
+      "نعم",
+      "لا"
+    ],
+    "options_en": [],
+    "imageURL": "https://www.arabquest.net/wp-content/uploads/2019/10/Untitled174.png",
+    "correctIndex": 0
+  },
+  {
+    "text_ar": "في الصورة التي امامك الوقوف صحیح:",
+    "text_en": "",
+    "options_ar": [
+      "نعم",
+      "لا"
+    ],
+    "options_en": [],
+    "imageURL": "https://www.arabquest.net/wp-content/uploads/2019/10/Untitled183.png",
+    "correctIndex": 0
+  },
+  {
+    "text_ar": "في الصورة التي امامك تكون الاولویة:",
+    "text_en": "",
+    "options_ar": [
+      "للمركبة رقم ( ١ )",
+      "للمركبة رقم ( ٢ )"
+    ],
+    "options_en": [],
+    "imageURL": "https://www.arabquest.net/wp-content/uploads/2019/10/Untitled164.png",
+    "correctIndex": 0
+  },
+  {
+    "text_ar": "السیارة الزرقاء بحسب الرسم تأخذ المسرب الصحیح:",
+    "text_en": "",
+    "options_ar": [
+      "نعم",
+      "لا"
+    ],
+    "options_en": [],
+    "imageURL": "https://www.arabquest.net/wp-content/uploads/2019/10/Untitled193.png",
+    "correctIndex": 0
+  },
+  {
+    "text_ar": "ان الریاح التي تؤثر على المركبة اثناء عملیة التجاوز كما ھو مبین بالرسم",
+    "text_en": "",
+    "options_ar": [
+      "ریاح طبیعیة",
+      "ریاح التفریغ",
+      "لاشئ مما ذكر"
+    ],
+    "options_en": [],
+    "imageURL": "https://www.arabquest.net/wp-content/uploads/2019/10/Untitled197.png",
+    "correctIndex": 0
+  },
+  {
+    "text_ar": "في الصورة التي امامك الوقوف صحیح:",
+    "text_en": "",
+    "options_ar": [
+      "نعم",
+      "لا"
+    ],
+    "options_en": [],
+    "imageURL": "https://www.arabquest.net/wp-content/uploads/2019/10/Untitled182.png",
+    "correctIndex": 0
+  },
+  {
+    "text_ar": "في الصورة التي امامك تكون الاولویة:",
+    "text_en": "",
+    "options_ar": [
+      "للمركبة رقم ( ١ )",
+      "للمركبة رقم ( ٢ )"
+    ],
+    "options_en": [],
+    "imageURL": "https://www.arabquest.net/wp-content/uploads/2019/10/Untitled161.png",
+    "correctIndex": 0
+  },
+  {
+    "text_ar": "في الصورة التي امامك الى یرید السائق:",
+    "text_en": "",
+    "options_ar": [
+      "التوجه الى الیمین.",
+      "التوجه الى الیسار.",
+      "تخفیف السرعة."
+    ],
+    "options_en": [],
+    "imageURL": "https://www.arabquest.net/wp-content/uploads/2019/10/Untitled191.png",
+    "correctIndex": 0
+  },
+  {
+    "text_ar": "إذا كانت المركبة التي امامك تقف على منحدر فإن وضعیة عجلات المركبة تكون كما في الشكل:",
+    "text_en": "",
+    "options_ar": [
+      "نعم",
+      "لا"
+    ],
+    "options_en": [],
+    "imageURL": "https://www.arabquest.net/wp-content/uploads/2019/10/Untitled194.png",
+    "correctIndex": 0
+  },
+  {
+    "text_ar": "في الصورة التي امامك التصرف الذي تقوم به المركبة صحیح:",
+    "text_en": "",
+    "options_ar": [
+      "نعم",
+      "لا"
+    ],
+    "options_en": [],
+    "imageURL": "https://www.arabquest.net/wp-content/uploads/2019/10/Untitled172.png",
+    "correctIndex": 0
+  },
+  {
+    "text_ar": "ان سائق المركبة الحمراء لا یزعج بضوئه سائق المركبة الموجودة في الأمام (الزرقاء) و ذلك لأنه لا یسیر ملاصقا له",
+    "text_en": "",
+    "options_ar": [
+      "نعم",
+      "لا"
+    ],
+    "options_en": [],
+    "imageURL": "https://www.arabquest.net/wp-content/uploads/2019/10/Untitled199.png",
+    "correctIndex": 0
+  },
+  {
+    "text_ar": "استخدام الضوء الرباعي (الفلشر) یعني:",
+    "text_en": "",
+    "options_ar": [
+      "التوجه الى الیمین.",
+      "التوجه الى الیسار.",
+      "تخفیف السرعة یوجد خطر أمامك."
+    ],
+    "options_en": [],
+    "imageURL": "https://www.arabquest.net/wp-content/uploads/2019/10/Untitled192.png",
+    "correctIndex": 0
+  },
+  {
+    "text_ar": "في الصورة التي امامك یجب على المركبة رقم ( ١) اخذ اقصى الیمین:",
+    "text_en": "",
+    "options_ar": [
+      "نعم",
+      "لا"
+    ],
+    "options_en": [],
+    "imageURL": "https://www.arabquest.net/wp-content/uploads/2019/10/Untitled165.png",
+    "correctIndex": 0
+  },
+  {
+    "text_ar": "إذا كانت المركبة التي امامك تقف على منحدر فإن وضعیة عجلات المركبة تكون كما في الشكل:",
+    "text_en": "",
+    "options_ar": [
+      "نعم",
+      "لا"
+    ],
+    "options_en": [],
+    "imageURL": "https://www.arabquest.net/wp-content/uploads/2019/10/Untitled195.png",
+    "correctIndex": 0
+  },
+  {
+    "text_ar": "في الصورة التي امامك تقف المركبة الصفراء في المكان الصحیح:",
+    "text_en": "",
+    "options_ar": [
+      "نعم",
+      "لا"
+    ],
+    "options_en": [],
+    "imageURL": "https://www.arabquest.net/wp-content/uploads/2019/10/Untitled184.png",
+    "correctIndex": 0
+  },
+  {
+    "text_ar": "في الصورة التي امامك المركبة الزرقاء تتجاوز بشكل صحیح:",
+    "text_en": "",
+    "options_ar": [
+      "نعم",
+      "لا"
+    ],
+    "options_en": [],
+    "imageURL": "https://www.arabquest.net/wp-content/uploads/2019/10/Untitled177.png",
+    "correctIndex": 0
+  },
+  {
+    "text_ar": "في الصورة التي امامك المركبة الزرقاء تتجاوز بشكل صحیح:",
+    "text_en": "",
+    "options_ar": [
+      "نعم",
+      "لا"
+    ],
+    "options_en": [],
+    "imageURL": "https://www.arabquest.net/wp-content/uploads/2019/10/Untitled175.png",
+    "correctIndex": 0
+  },
+  {
+    "text_ar": "الإجراء الذي یجب ان یقوم به سائق المركبة رقم (١):",
+    "text_en": "",
+    "options_ar": [
+      "تخفیف السرعة وإتخاذ اقصى الیمین",
+      "زیادة السرعة وإتخاذ اقصى الیمین",
+      "لاشئ مما ذكر."
+    ],
+    "options_en": [],
+    "imageURL": "https://www.arabquest.net/wp-content/uploads/2019/10/Untitled178.png",
+    "correctIndex": 0
+  },
+  {
+    "text_ar": "في الصورة التي امامك تكون الاولویة:",
+    "text_en": "",
+    "options_ar": [
+      "للمركبة رقم ( ١ )",
+      "للمركبة رقم ( ٢ )"
+    ],
+    "options_en": [],
+    "imageURL": "https://www.arabquest.net/wp-content/uploads/2019/10/Untitled162.png",
+    "correctIndex": 0
+  },
+  {
+    "text_ar": "في الصورة التي امامك وقوف المركبة صحیح:",
+    "text_en": "",
+    "options_ar": [
+      "نعم",
+      "لا"
+    ],
+    "options_en": [],
+    "imageURL": "https://www.arabquest.net/wp-content/uploads/2019/10/Untitled186.png",
+    "correctIndex": 0
+  },
+  {
+    "text_ar": "في الصورة التي امامك المركبة رقم ( ٢ ) یعتبر تجاوزھا صحیحا:",
+    "text_en": "",
+    "options_ar": [
+      "نعم",
+      "لا"
+    ],
+    "options_en": [],
+    "imageURL": "https://www.arabquest.net/wp-content/uploads/2019/10/Untitled170.png",
+    "correctIndex": 0
+  },
+  {
+    "text_ar": "في الصورة التي امامك تكون الاولویة:",
+    "text_en": "",
+    "options_ar": [
+      "للمركبة رقم ( ١ )",
+      "للمركبة رقم ( ٢ )"
+    ],
+    "options_en": [],
+    "imageURL": "https://www.arabquest.net/wp-content/uploads/2019/10/Untitled167.png",
+    "correctIndex": 0
+  },
+  {
+    "text_ar": "من خلال الرسم الموضح نجد أن:",
+    "text_en": "",
+    "options_ar": [
+      "السیارة الصفراء ضمن رؤیة المركبة الزرقاء.",
+      "السیارة الحمراء ضمن رؤیة المركبة الزرقاء.",
+      "السیارتین الصفراء او الحمراء خارج رؤیة السیارة الزرقاء وتسمى ھذه الحالة بالنقطة العمیاء.",
+      "لا شيء مما ذكر."
+    ],
+    "options_en": [],
+    "imageURL": "https://www.arabquest.net/wp-content/uploads/2019/10/Untitled173.png",
+    "correctIndex": 0
+  },
+  {
+    "text_ar": "في الصورة التي امامك یرید السائق التوجه:",
+    "text_en": "",
+    "options_ar": [
+      "الى الیمین.",
+      "الى الیسار.",
+      "تخفیف السرعة"
+    ],
+    "options_en": [],
+    "imageURL": "https://www.arabquest.net/wp-content/uploads/2019/10/Untitled190.png",
+    "correctIndex": 0
+  },
+  {
+    "text_ar": "في الصورة التي امامك تكون الاولویة:",
+    "text_en": "",
+    "options_ar": [
+      "للمركبة رقم ( ١ )",
+      "للمركبة رقم ( ٢ )"
+    ],
+    "options_en": [],
+    "imageURL": "https://www.arabquest.net/wp-content/uploads/2019/10/Untitled166.png",
+    "correctIndex": 0
+  },
+  {
+    "text_ar": "إذا كانت المركبة التي امامك تقف على منحدر فإن وضعیة عجلات المركبة تكون كما في الشكل:",
+    "text_en": "",
+    "options_ar": [
+      "نعم",
+      "لا"
+    ],
+    "options_en": [],
+    "imageURL": "https://www.arabquest.net/wp-content/uploads/2019/10/Untitled196.png",
+    "correctIndex": 0
+  },
+  {
+    "text_ar": "في الصورة التي امامك ھل تصرف المركبة الزرقاء صحیح:",
+    "text_en": "",
+    "options_ar": [
+      "نعم",
+      "لا"
+    ],
+    "options_en": [],
+    "imageURL": "https://www.arabquest.net/wp-content/uploads/2019/10/Untitled169.png",
+    "correctIndex": 0
+  },
+  {
+    "text_ar": "في الصورة التي امامك المركبة الصفراء تتجاوز بشكل صحیح:",
+    "text_en": "",
+    "options_ar": [
+      "نعم",
+      "لا"
+    ],
+    "options_en": [],
+    "imageURL": "https://www.arabquest.net/wp-content/uploads/2019/10/Untitled176.png",
+    "correctIndex": 0
+  },
+  {
+    "text_ar": "في الصورة التي امامك وقوف المركبات صحیح:",
+    "text_en": "",
+    "options_ar": [
+      "نعم",
+      "لا"
+    ],
+    "options_en": [],
+    "imageURL": "https://www.arabquest.net/wp-content/uploads/2019/10/Untitled187.png",
+    "correctIndex": 0
+  },
+  {
+    "text_ar": "في الصورة التي امامك وقوف المركبة صحیح:",
+    "text_en": "",
+    "options_ar": [
+      "نعم",
+      "لا"
+    ],
+    "options_en": [],
+    "imageURL": "https://www.arabquest.net/wp-content/uploads/2019/10/Untitled179.png",
+    "correctIndex": 0
+  },
+  {
+    "text_ar": "في الصورة التي امامك تكون الاولویة:",
+    "text_en": "",
+    "options_ar": [
+      "للمركبة رقم ( ١ )",
+      "للمركبة رقم ( ٢ )"
+    ],
+    "options_en": [],
+    "imageURL": "https://www.arabquest.net/wp-content/uploads/2019/10/Untitled163.png",
+    "correctIndex": 0
+  },
+  {
+    "text_ar": "في الصورة التي امامك یجب على المركبة الصفراء:",
+    "text_en": "",
+    "options_ar": [
+      "التوقف للإفساح للشاحنة بالالتفاف.",
+      "الالتفاف إلى الیمین."
+    ],
+    "options_en": [],
+    "imageURL": "https://www.arabquest.net/wp-content/uploads/2019/10/Untitled168.png",
+    "correctIndex": 0
+  },
+  {
+    "text_ar": "في الصورة التي امامك الوقوف صحیح:",
+    "text_en": "",
+    "options_ar": [
+      "نعم",
+      "لا"
+    ],
+    "options_en": [],
+    "imageURL": "https://www.arabquest.net/wp-content/uploads/2019/10/Untitled181.png",
+    "correctIndex": 0
+  },
+  {
+    "text_ar": "في الصورة التي امامك التصرف الذي تقوم به المركبة صحیح:",
+    "text_en": "",
+    "options_ar": [
+      "نعم",
+      "لا"
+    ],
+    "options_en": [],
+    "imageURL": "https://www.arabquest.net/wp-content/uploads/2019/10/Untitled171.png",
+    "correctIndex": 0
+  },
+  {
+    "text_ar": "في الصورة التي امامك یرید السائق التوجه:",
+    "text_en": "",
+    "options_ar": [
+      "الى الیمین.",
+      "الى الیسار.",
+      "تخفیف السرعة ."
+    ],
+    "options_en": [],
+    "imageURL": "https://www.arabquest.net/wp-content/uploads/2019/10/Untitled189.png",
+    "correctIndex": 0
+  },
+  {
+    "text_ar": "في الصورة التي امامك وقوف المركبة صحیح:",
+    "text_en": "",
+    "options_ar": [
+      "نعم",
+      "لا"
+    ],
+    "options_en": [],
+    "imageURL": "https://www.arabquest.net/wp-content/uploads/2019/10/Untitled180.png",
+    "correctIndex": 0
+  }
+]

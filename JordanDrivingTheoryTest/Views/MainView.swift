@@ -10,7 +10,7 @@ import SwiftUI
 struct MainView: View {
     @StateObject private var langMgr = LanguageManager()
     @EnvironmentObject var purchaseManager: PurchaseManager
-    let freeExamIDs: Set<Int> = [1, 2,3,4,5,6,7,8]
+    let freeExamIDs: Set<Int> = [1, 2,3,4,5,6,7,8,9,10,11,12,13,14,15]
     
     // 1. Ad + navigation state
     @State private var showAd = false
@@ -18,7 +18,7 @@ struct MainView: View {
     @State private var navigateToTest = false
     
     // 2. Your exams
-    let exams: [Exam] = (1...8).map {
+    let exams: [Exam] = (1...15).map {
         Exam(id: $0,
              titleKey: "exam_\($0)",
              filename: "questions\($0)")
@@ -92,7 +92,17 @@ struct MainView: View {
                             }
                         }
                         .padding(.horizontal, 20)
-                    }
+                    }.mask(
+                        LinearGradient(
+                            gradient: Gradient(stops: [
+                                .init(color: .black, location: 0),
+                                .init(color: .black, location: 0.9),
+                                .init(color: .clear, location: 1)
+                            ]),
+                            startPoint: .top,
+                            endPoint: .bottom
+                        )
+                    )
 
                     
                     Spacer(minLength: 10)
