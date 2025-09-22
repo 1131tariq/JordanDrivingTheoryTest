@@ -72,7 +72,7 @@ struct TestView: View {
                                 .padding(.horizontal)
                             
                             // Image handling
-                            if let imgName = viewModel.currentQuestion.imageName {
+                            if let imgName = viewModel.currentQuestion.imgName {
                                 Image(imgName)
                                     .resizable()
                                     .scaledToFit()

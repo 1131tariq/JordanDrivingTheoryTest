@@ -14,7 +14,7 @@ struct Question: Identifiable, Codable {
     let options_en: [String]
     let options_ar: [String]
     let correctIndex: Int
-    let imageName: String?
+    let imgName: String?
     let imageURL: String?// e.g. "sign_stop" or nil
     
     
