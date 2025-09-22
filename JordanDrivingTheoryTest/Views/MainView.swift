@@ -10,7 +10,7 @@ import SwiftUI
 struct MainView: View {
     @StateObject private var langMgr = LanguageManager()
     @EnvironmentObject var purchaseManager: PurchaseManager
-    let freeExamIDs: Set<Int> = [1, 2,3,4,5,6,7,8,9,10,11,12,13,14,15]
+    let freeExamIDs: Set<Int> = [1, 2,3,4,5,6,7,8]
     
     // 1. Ad + navigation state
     @State private var showAd = false
@@ -73,10 +73,16 @@ struct MainView: View {
                                     }
                                 } label: {
                                     VStack {
-                                        Text("\(NSLocalizedString("Exam", comment: "")) \(exam.id)")
-                                            .font(.title3)
-                                            .bold()
-                                        
+                                        if isLocked {
+                                            Text("\(NSLocalizedString("Exam", comment: "")) \(exam.id)\nComming Soon")
+                                                .font(.title3)
+                                                .bold()
+                                        } else {
+                                            Text("\(NSLocalizedString("Exam", comment: "")) \(exam.id)")
+                                                .font(.title3)
+                                                .bold()
+                                            
+                                        }
                                         if isLocked {
                                             Image(systemName: "lock.fill")
                                                 .font(.headline)
