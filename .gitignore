@@ -19,3 +19,5 @@ build/
 
 # Ignore the data folder
 Data/
+Assets.xcassets/
+
