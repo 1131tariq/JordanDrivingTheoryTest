@@ -15,6 +15,16 @@ struct SettingsView: View {
             Image("backdrop2").resizable().scaledToFill().ignoresSafeArea().opacity(0.7)
             VStack(spacing: 20) {
                 
+                NavigationLink(destination: MainView()) {
+                    HStack(spacing: 4) {
+                        Image(systemName: "arrow.left")
+                        Text(NSLocalizedString("main_menu", bundle: .localized, comment: ""))
+                    }
+                    .padding(.horizontal)
+                }
+                Spacer()
+
+                
                 if !purchaseManager.hasRemovedAds {
                     Button {
                         Task {
@@ -51,9 +61,11 @@ struct SettingsView: View {
                 }
                 .padding()
                 .foregroundColor(.blue)
+                Spacer()
             }
             .padding()
         }
+        .navigationBarBackButtonHidden(true)
     }
 }
 

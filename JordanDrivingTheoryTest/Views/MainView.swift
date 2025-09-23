@@ -161,7 +161,7 @@ struct MainView: View {
             .onAppear {
                 LocalizedBundle.setLanguage(langMgr.language)
             }
-        }
+        }        .navigationBarBackButtonHidden(true)
     }
     
     // MARK: – Helpers
