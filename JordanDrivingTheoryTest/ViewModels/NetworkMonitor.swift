@@ -11,10 +11,10 @@ import Combine
 class NetworkMonitor: ObservableObject {
     private let monitor = NWPathMonitor()
     private let queue = DispatchQueue(label: "NetworkMonitor")
-
+    
     @Published var isConnected: Bool = true
     @Published var lastUpdate: Date = Date() // 🔑 Use this to detect changes
-
+    
     init() {
         monitor.pathUpdateHandler = { [weak self] path in
             DispatchQueue.main.async {
@@ -27,7 +27,7 @@ class NetworkMonitor: ObservableObject {
         }
         monitor.start(queue: queue)
     }
-
+    
     deinit {
         monitor.cancel()
     }

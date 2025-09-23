@@ -15,7 +15,7 @@ struct InterstitialAdView: View {
     @EnvironmentObject var purchaseManager: PurchaseManager
     @State private var hasPresented = false
     var onDismiss: (() -> Void)? = nil
-
+    
     var body: some View {
         Color.clear
             .task {
@@ -24,7 +24,7 @@ struct InterstitialAdView: View {
                     dismiss()
                     onDismiss?()
                 }
-
+                
                 if !hasPresented {
                     hasPresented = true
                     if adVM.interstitialAd != nil {

@@ -18,7 +18,7 @@ struct Secrets {
         }
         return value
     }
-
+    
     static var adMobAppID: String { value(for: "AdMobAppID") }
     static var bannerUnitID: String { value(for: "BannerUnitID") }
     static var interstitialUnitID: String { value(for: "InterstitialUnitID") }

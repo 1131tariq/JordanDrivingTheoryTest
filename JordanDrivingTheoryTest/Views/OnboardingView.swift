@@ -21,7 +21,7 @@ struct OnboardingView: View {
             Image("backdrop2").resizable()
                 .scaledToFill()
                 .ignoresSafeArea().opacity(0.4)
-                
+            
             TabView(selection: $currentPage) {
                 // 1️⃣ Language selection is page 0
                 languageSelectionPage
@@ -51,7 +51,7 @@ struct OnboardingView: View {
             VStack(spacing: 20) {
                 Text(localizedKey: "choose_language")
                     .font(.largeTitle).bold()
-                    
+                
                 
                 HStack(spacing: 30) {
                     Button {
@@ -95,8 +95,8 @@ struct OnboardingView: View {
                 .padding()
                 .multilineTextAlignment(.center)
                 .frame(maxWidth: 300)
-
-                
+            
+            
             
             Button {
                 currentPage = 2  // move to Notifications

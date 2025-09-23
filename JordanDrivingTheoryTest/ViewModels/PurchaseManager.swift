@@ -13,9 +13,9 @@ import StoreKit
 class PurchaseManager: ObservableObject {
     @Published var hasRemovedAds = false
     @Published var products: [Product] = []
-
+    
     private let removeAdsID = "BataynehInc.JordanDrivingTheoryTestApp.removeads1"
-
+    
     init() {
         Task {
             await requestProducts()
@@ -23,7 +23,7 @@ class PurchaseManager: ObservableObject {
             listenForTransactions()   // 👈 Start transaction listener
         }
     }
-
+    
     // Load products from App Store Connect
     func requestProducts() async {
         do {
@@ -33,14 +33,14 @@ class PurchaseManager: ObservableObject {
             print("❌ Failed to fetch products: \(error)")
         }
     }
-
+    
     // Attempt purchase
     func purchaseRemoveAds() async {
         guard let product = products.first(where: { $0.id == removeAdsID }) else {
             print("❌ Remove Ads product not found")
             return
         }
-
+        
         do {
             let result = try await product.purchase()
             switch result {
@@ -55,7 +55,7 @@ class PurchaseManager: ObservableObject {
             print("❌ Purchase failed: \(error)")
         }
     }
-
+    
     // Handle verified/unverified transactions
     private func handleVerification(_ verification: VerificationResult<StoreKit.Transaction>) {
         switch verification {
@@ -69,13 +69,13 @@ class PurchaseManager: ObservableObject {
             print("❌ Unverified transaction: \(error.localizedDescription)")
         }
     }
-
+    
     // Always reset state, then check for entitlements
     func updatePurchasedProducts() async {
         await MainActor.run {
             self.hasRemovedAds = false
         }
-
+        
         for await result in StoreKit.Transaction.currentEntitlements {
             if case .verified(let transaction) = result,
                transaction.productID == removeAdsID {
@@ -85,7 +85,7 @@ class PurchaseManager: ObservableObject {
             }
         }
     }
-
+    
     private func listenForTransactions() {
         Task.detached(priority: .background) {
             for await result in StoreKit.Transaction.updates {
@@ -100,7 +100,7 @@ class PurchaseManager: ObservableObject {
             }
         }
     }
-
+    
     // Manual restore purchases button
     func restorePurchases() async {
         do {
@@ -111,6 +111,6 @@ class PurchaseManager: ObservableObject {
             print("❌ Failed to restore purchases: \(error)")
         }
     }
-
+    
 }
 

@@ -65,8 +65,8 @@ struct SplashScreenView: View {
         }
         .onAppear {
             withAnimation(.linear(duration: 2.0).repeatForever(autoreverses: false)) {
-                    animateShine.toggle()
-                }
+                animateShine.toggle()
+            }
         }
     }
 }

@@ -10,7 +10,7 @@ import SwiftUI
 struct MainView: View {
     @StateObject private var langMgr = LanguageManager()
     @EnvironmentObject var purchaseManager: PurchaseManager
-    let freeExamIDs: Set<Int> = [1, 2,3,4,5,6,7,8]
+    let freeExamIDs: Set<Int> = [1, 2,3,4,5,6,7,8,9,10,11,12,13,14,15]
     
     // 1. Ad + navigation state
     @State private var showAd = false
@@ -42,11 +42,11 @@ struct MainView: View {
                         .pickerStyle(.segmented)
                         .frame(maxWidth: 220) // keeps picker smaller
                         NavigationLink(destination: SettingsView()) {
-                                Image(systemName: "gearshape.fill")
-                                    .font(.title2)
-                                    .foregroundColor(.primary)
-                                    .padding(.leading, 8)
-                            }
+                            Image(systemName: "gearshape.fill")
+                                .font(.title2)
+                                .foregroundColor(.primary)
+                                .padding(.leading, 8)
+                        }
                     }
                     Spacer()
                     
@@ -109,7 +109,7 @@ struct MainView: View {
                             endPoint: .bottom
                         )
                     )
-
+                    
                     
                     Spacer(minLength: 10)
                     if !purchaseManager.hasRemovedAds {

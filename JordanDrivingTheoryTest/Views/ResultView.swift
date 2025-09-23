@@ -51,5 +51,5 @@ struct ResultView: View {
             return "You scored \(percent)%"
         }
     }
-
+    
 }

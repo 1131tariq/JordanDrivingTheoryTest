@@ -9,7 +9,7 @@ import SwiftUI
 
 struct SettingsView: View {
     @EnvironmentObject var purchaseManager: PurchaseManager
-
+    
     var body: some View {
         ZStack {
             Image("backdrop2").resizable().scaledToFill().ignoresSafeArea().opacity(0.7)
@@ -54,7 +54,7 @@ struct SettingsView: View {
             }
             .padding()
         }
-        }
+    }
 }
 
 

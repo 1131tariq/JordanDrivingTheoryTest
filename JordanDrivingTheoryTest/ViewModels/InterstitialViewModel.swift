@@ -12,7 +12,7 @@ class InterstitialViewModel: NSObject, ObservableObject, FullScreenContentDelega
     var interstitialAd: InterstitialAd?
     var onAdDismiss: (() -> Void)?
     
-
+    
     @MainActor
     func loadAd() async {
         do {
@@ -26,7 +26,7 @@ class InterstitialViewModel: NSObject, ObservableObject, FullScreenContentDelega
             print("❌ Failed to load interstitial ad: \(error.localizedDescription)")
         }
     }
-
+    
     @MainActor
     func showAd() {
         guard let ad = interstitialAd,
@@ -37,13 +37,13 @@ class InterstitialViewModel: NSObject, ObservableObject, FullScreenContentDelega
         ad.present(from: root)
         interstitialAd = nil
     }
-
+    
     // MARK: - FullScreenContentDelegate
     func adDidDismissFullScreenContent(_ ad: FullScreenPresentingAd) {
         onAdDismiss?()
         Task { await loadAd() } // preload next ad
     }
-
+    
     func ad(_ ad: FullScreenPresentingAd, didFailToPresentFullScreenContentWithError error: Error) {
         print("❌ Failed to present interstitial: \(error.localizedDescription)")
         onAdDismiss?()

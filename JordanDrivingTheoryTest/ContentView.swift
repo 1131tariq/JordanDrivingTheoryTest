@@ -49,39 +49,39 @@ struct ContentView: View {
     
     // 🔑 Network monitor
     @EnvironmentObject var networkMonitor: NetworkMonitor
-
+    
     var body: some View {
-           ZStack {
-               if showSplash {
-                   SplashScreenView()
-               } else {
-                   if networkMonitor.isConnected {
-                       NavigationStack {
-                           if hasSeenOnboarding {
-                               MainView()
-                           } else {
-                               OnboardingView {
-                                   hasSeenOnboarding = true
-                               }
-                           }
-                       }
-                       .onAppear {
-                           LocalizedBundle.setLanguage(language)
-                       }
-                   } else {
-                       NoConnectionView()
-                   }
-               }
-           }
-           .onAppear {
-               // Hide splash after 2 seconds
-               DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
-                   withAnimation {
-                       showSplash = false
-                   }
-               }
-           }
-       }
+        ZStack {
+            if showSplash {
+                SplashScreenView()
+            } else {
+                if networkMonitor.isConnected {
+                    NavigationStack {
+                        if hasSeenOnboarding {
+                            MainView()
+                        } else {
+                            OnboardingView {
+                                hasSeenOnboarding = true
+                            }
+                        }
+                    }
+                    .onAppear {
+                        LocalizedBundle.setLanguage(language)
+                    }
+                } else {
+                    NoConnectionView()
+                }
+            }
+        }
+        .onAppear {
+            // Hide splash after 2 seconds
+            DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+                withAnimation {
+                    showSplash = false
+                }
+            }
+        }
+    }
 }
 
 #Preview {
