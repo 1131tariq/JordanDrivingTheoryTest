@@ -32,7 +32,7 @@ struct SettingsView: View {
                         }
                     } label: {
                         HStack {
-                            Text(localizedKey: "Remove Ads")
+                            Text(localizedKey: "Remove Ads & Unlock Offline Mode")
                                 .fontWeight(.semibold)
                         }
                         .frame(maxWidth: 350)
