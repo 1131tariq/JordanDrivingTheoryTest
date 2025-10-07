@@ -157,10 +157,10 @@ struct TestView: View {
                 }
                 
                 // Banner Ad
-//                if !purchaseManager.hasRemovedAds {
-//                    BannerAdView(adUnitID: Secrets.bannerUnitID)
-//                        .frame(height: 50)
-//                }
+                if !purchaseManager.hasRemovedAds {
+                    BannerAdView(adUnitID: Secrets.bannerUnitID)
+                        .frame(height: 50)
+                }
             }
             .padding()
             .navigationBarBackButtonHidden(true)

@@ -412,6 +412,23 @@
         }
       }
     },
+    "Remove Ads & Unlock Offline Mode" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "إزالة الإعلانات وتفعيل الوضع بدون إنترنت"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Remove Ads & Unlock Offline Mode"
+          }
+        }
+      }
+    },
     "Restore Purchases" : {
       "extractionState" : "manual",
       "localizations" : {

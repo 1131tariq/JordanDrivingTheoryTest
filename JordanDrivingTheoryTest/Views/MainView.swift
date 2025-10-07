@@ -112,10 +112,10 @@ struct MainView: View {
                     
                     
                     Spacer(minLength: 10)
-//                    if !purchaseManager.hasRemovedAds {
-//                        BannerAdView(adUnitID: Secrets.bannerUnitID)
-//                            .frame(height: 50) // Height adjusts automatically based on device width
-//                    }
+                    if !purchaseManager.hasRemovedAds {
+                        BannerAdView(adUnitID: Secrets.bannerUnitID)
+                            .frame(height: 50) // Height adjusts automatically based on device width
+                    }
                     
                 }
                 .padding(.horizontal, 80)   // ✅ only horizontal padding

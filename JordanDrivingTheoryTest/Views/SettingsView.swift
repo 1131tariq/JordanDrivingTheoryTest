@@ -9,13 +9,17 @@ import SwiftUI
 
 struct SettingsView: View {
     @EnvironmentObject var purchaseManager: PurchaseManager
+    @Environment(\.dismiss) private var dismiss
+
     
     var body: some View {
         ZStack {
             Image("backdrop2").resizable().scaledToFill().ignoresSafeArea().opacity(0.7)
             VStack(spacing: 20) {
                 
-                NavigationLink(destination: MainView()) {
+                Button {
+                    dismiss()
+                } label: {
                     HStack(spacing: 4) {
                         Image(systemName: "arrow.left")
                         Text(NSLocalizedString("main_menu", bundle: .localized, comment: ""))
@@ -23,7 +27,7 @@ struct SettingsView: View {
                     .padding(.horizontal)
                 }
                 Spacer()
-
+                
                 
                 if !purchaseManager.hasRemovedAds {
                     Button {
