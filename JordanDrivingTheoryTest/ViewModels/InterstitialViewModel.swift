@@ -12,9 +12,8 @@ class InterstitialViewModel: NSObject, ObservableObject, FullScreenContentDelega
     var interstitialAd: InterstitialAd?
     var onAdDismiss: (() -> Void)?
     
-    
     @MainActor
-    func loadAd() async {
+    func loadAd() async -> Bool {
         do {
             interstitialAd = try await InterstitialAd.load(
                 with: Secrets.interstitialUnitID,
@@ -22,8 +21,11 @@ class InterstitialViewModel: NSObject, ObservableObject, FullScreenContentDelega
             )
             interstitialAd?.fullScreenContentDelegate = self
             print("✅ Interstitial loaded")
+            return true
         } catch {
             print("❌ Failed to load interstitial ad: \(error.localizedDescription)")
+            interstitialAd = nil
+            return false
         }
     }
     
@@ -32,6 +34,7 @@ class InterstitialViewModel: NSObject, ObservableObject, FullScreenContentDelega
         guard let ad = interstitialAd,
               let root = UIApplication.topViewController() else {
             print("⚠️ Ad or root VC not ready")
+            onAdDismiss?()  // auto-dismiss if ad fails to show
             return
         }
         ad.present(from: root)
@@ -49,6 +52,7 @@ class InterstitialViewModel: NSObject, ObservableObject, FullScreenContentDelega
         onAdDismiss?()
     }
 }
+
 
 extension UIApplication {
     static func topViewController(

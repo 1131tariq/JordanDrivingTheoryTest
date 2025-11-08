@@ -42,7 +42,7 @@ struct MainView: View {
                         .pickerStyle(.segmented)
                         .frame(maxWidth: 220) // keeps picker smaller
                         NavigationLink(destination: SettingsView()) {
-                            Image(systemName: "gearshape.fill")
+                            Image(systemName: "cart.fill")
                                 .font(.title2)
                                 .foregroundColor(.primary)
                                 .padding(.leading, 8)

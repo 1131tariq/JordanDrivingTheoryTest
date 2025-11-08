@@ -1,40 +1,38 @@
-//
-//  PurchaseManager.swift
-//  JordanDrivingTheoryTest
-//
-//  Created by Tareq Batayneh on 26/08/2025.
-//
-
 import Foundation
-import SwiftUI
 import StoreKit
 
 @MainActor
-class PurchaseManager: ObservableObject {
-    @Published var hasRemovedAds = false
-    @Published var products: [Product] = []
+final class PurchaseManager: ObservableObject {
+    @Published private(set) var hasRemovedAds = false
+    @Published private(set) var products: [Product] = []
     
     private let removeAdsID = "BataynehInc.JordanDrivingTheoryTestApp.removeads1"
+    private var updatesTask: Task<Void, Never>? = nil
     
     init() {
         Task {
-            await requestProducts()
-            await updatePurchasedProducts()
-            listenForTransactions()   // 👈 Start transaction listener
+            await loadProducts()
+            await refreshEntitlements()
+            startListeningForTransactions()
         }
     }
     
-    // Load products from App Store Connect
-    func requestProducts() async {
+    deinit {
+        updatesTask?.cancel()
+    }
+    
+    // MARK: - Load products
+    func loadProducts() async {
         do {
             products = try await Product.products(for: [removeAdsID])
             print("✅ Products loaded: \(products.map(\.id))")
         } catch {
-            print("❌ Failed to fetch products: \(error)")
+            print("❌ Failed to fetch products: \(error.localizedDescription)")
+            products = []
         }
     }
     
-    // Attempt purchase
+    // MARK: - Purchase
     func purchaseRemoveAds() async {
         guard let product = products.first(where: { $0.id == removeAdsID }) else {
             print("❌ Remove Ads product not found")
@@ -45,72 +43,76 @@ class PurchaseManager: ObservableObject {
             let result = try await product.purchase()
             switch result {
             case .success(let verification):
-                handleVerification(verification)
+                handleTransaction(verification)
             case .userCancelled:
-                print("⚠️ User cancelled purchase")
+                print("⚠️ Purchase cancelled by user")
             default:
-                break
+                print("⚠️ Unknown purchase result")
             }
         } catch {
-            print("❌ Purchase failed: \(error)")
+            print("❌ Purchase failed: \(error.localizedDescription)")
         }
     }
     
-    // Handle verified/unverified transactions
-    private func handleVerification(_ verification: VerificationResult<StoreKit.Transaction>) {
-        switch verification {
-        case .verified(let transaction):
-            print("✅ Purchase successful: \(transaction.productID)")
-            if transaction.productID == removeAdsID {
-                hasRemovedAds = true
+    // MARK: - Transaction Handling
+    private func handleTransaction(_ verification: VerificationResult<StoreKit.Transaction>) {
+        guard case .verified(let transaction) = verification else {
+            if case .unverified(_, let error) = verification {
+                print("❌ Unverified transaction: \(error.localizedDescription)")
             }
-            Task { await transaction.finish() }
-        case .unverified(_, let error):
-            print("❌ Unverified transaction: \(error.localizedDescription)")
-        }
-    }
-    
-    // Always reset state, then check for entitlements
-    func updatePurchasedProducts() async {
-        await MainActor.run {
-            self.hasRemovedAds = false
+            return
         }
         
-        for await result in StoreKit.Transaction.currentEntitlements {
+        print("✅ Verified transaction for product: \(transaction.productID)")
+        if transaction.productID == removeAdsID {
+            hasRemovedAds = true
+        }
+        
+        Task { await transaction.finish() }
+    }
+    
+    // MARK: - Entitlements
+    func refreshEntitlements() async {
+        var isEntitled = false
+        
+        for await result in Transaction.currentEntitlements {
             if case .verified(let transaction) = result,
                transaction.productID == removeAdsID {
-                await MainActor.run {
-                    self.hasRemovedAds = true
-                }
+                isEntitled = true
+                break
             }
         }
+        
+        hasRemovedAds = isEntitled
+        print(isEntitled ? "✅ User owns Remove Ads" : "ℹ️ No active entitlements")
     }
     
-    private func listenForTransactions() {
-        Task.detached(priority: .background) {
-            for await result in StoreKit.Transaction.updates {
-                if case .verified(let transaction) = result {
+    // MARK: - Live Transaction Updates
+    private func startListeningForTransactions() {
+        updatesTask = Task.detached(priority: .background) { [weak self] in
+            guard let self else { return }
+            
+            for await result in Transaction.updates {
+                guard case .verified(let transaction) = result else { continue }
+                
+                if transaction.productID == self.removeAdsID {
                     await MainActor.run {
-                        if transaction.productID == self.removeAdsID {
-                            self.hasRemovedAds = true
-                        }
+                        self.hasRemovedAds = true
                     }
-                    await transaction.finish()
                 }
+                await transaction.finish()
             }
         }
     }
     
-    // Manual restore purchases button
+    // MARK: - Restore
     func restorePurchases() async {
         do {
-            try await AppStore.sync()   // Forces sync with App Store
-            await updatePurchasedProducts()
-            print("✅ Purchases restored")
+            try await AppStore.sync()
+            await refreshEntitlements()
+            print("✅ Purchases restored successfully")
         } catch {
-            print("❌ Failed to restore purchases: \(error)")
+            print("❌ Restore failed: \(error.localizedDescription)")
         }
     }
-    
 }
-
